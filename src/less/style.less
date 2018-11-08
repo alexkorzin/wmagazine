@@ -1,0 +1,372 @@
+@import 'fonts.less';
+@import 'modules.less';
+@import 'var.less';
+@import 'mixins.less';
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.wrapper{
+    width: 87%;
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.hero{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+// ----------------Background----------------
+
+.background{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: -1;
+
+    &_right{
+        width: 50%;
+        height: 100%;
+        background: #000;
+        position: absolute;
+        left: 0;
+        z-index: 10;
+    }
+
+    &_left{
+        width: 50%;
+        height: 100%;
+        background: @gray-l;
+        position: absolute;
+        right: 0;
+        z-index: 5;
+    }
+}
+
+// ----------------Header----------------
+
+.nav{
+    padding-top: 45px;
+    .md-height({
+        padding-top: 20px;
+    });
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &_left-block{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &_right-block, &_left-block{
+        flex-basis: 210px;
+    }
+}
+
+.buttons{
+   &__right{
+       margin-left: 2%;
+   } 
+}
+
+.menu{
+    display: flex;
+    font-size: 16px;
+    .font-futura;
+
+    &_item a{
+        color: white;
+        transition: 0.3s ease;
+        padding: 5px 0;
+        border-bottom: 2px solid transparent;
+
+        &:hover{
+            color: @accent;
+            border-bottom: 2px solid @accent;
+        }
+    }
+
+    &_item:not(:last-child){
+        margin-right: 30px;
+    }
+}
+
+.logo{
+    font-size: 42px;
+    color: white;
+    .font-zefani;
+}
+
+.user-block{
+    display: flex;
+    align-items: center;
+
+    .avatar{
+        margin-left: 20px;
+    }
+}
+
+.avatar{
+    &_img{
+        background: url('../img/avatar.png');
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+    }
+}
+
+// ----------------Blog----------------
+
+.blog{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    &_posts{
+        display: inline-flex;
+        background: #000;
+        padding: 18px 0px;
+    }
+}
+
+.post{
+    display: flex;
+    margin-right: 20px;
+
+    &:hover .post_name{
+        text-decoration: underline;
+    }
+
+    &_name{
+        font-size: 12px;
+        line-height: 1.25;
+        color: white;
+        display: block;
+        max-width: 150px;
+        .font-futura;
+        transition: 0.3s ease;
+    }
+
+    &_date{
+        color: @blue-d;
+        font-size: 10px;
+        display: block;
+        line-height: 13px;
+        .font-roboto-reg
+    }
+
+    &_img{
+        width: 43px;
+        margin-left: 10px;
+        background-size: cover!important;
+    }
+}
+
+.post:not(:last-child){
+    padding-right: 20px;
+    border-right: 1px solid @blue-d;
+}
+
+// ----------------Content----------------
+
+.content{
+    margin-top: 2.8%;
+    position: relative;
+
+    .md-height({
+        margin-top: 1.5%;
+    });
+
+    &_wrapper{
+        height: 70vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+
+        .md-height({
+            height: 75vh;
+        });
+    }
+
+    &_head, &_subhead{
+        .font-bodoni;
+        margin: 0;
+        padding: 0;
+        font-weight: normal;
+        display: block;
+    }
+
+    &_head{
+        color: white;
+        font-size: 72px;
+        text-align: right;
+        margin-bottom: 5px;
+
+        .md-height({
+            font-size: 50px;
+        });
+    }
+
+    &_subhead{
+        color: @gray;
+        font-size: 56px;
+
+        .md-height({
+            font-size: 40px;
+        });
+    }
+
+    &_rotated{
+        transform-origin: 50% 50%;
+        transform: rotate(-90deg) translate(0, -225px);
+        width: 67vh;
+
+        .md-height({
+            width: 76.5vh;
+        });
+    }
+
+    &_main-image{
+        position: absolute;
+        overflow: hidden;
+        height: 67vh;
+        width: 540px;
+        background: white;
+        background-size: cover!important;
+        background-position: center center!important;
+        left: 50%;
+        transform: translate(-50%, 0);
+        box-shadow: 10px 10px 83px -19px rgba(0,0,0,0.3);
+
+    }
+}
+
+.main-image_overlay{
+    height: 100%;
+    width: 100%;
+    background: black;
+}
+
+.slider-controls{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+
+    &_button{
+        color: white;
+        font-size: 12px;
+        .font-roboto-bold;
+
+        &__bottom{
+            padding-right: 25px;
+        }
+
+        &__top{
+            padding-left: 25px;
+            border-left: 1px solid @gray;
+        }
+    }
+}
+
+// ----------------Slide Block----------------
+.slide-block{
+    position: absolute;
+    right: -195px;
+    top: 12vh;
+    
+    &_wrapper{
+        // height: 100%;
+        // height: 100%;
+        position: relative;
+    }
+
+    &_text{
+        font-size: 72px;
+        color: black;
+        font-weight: normal;
+        .font-bodoni;
+
+        &__upper{
+            position: absolute;
+            top: -7.5vh;
+            margin-left: 35%;
+            transform: translate(-50%, 0);
+        }
+
+        &__lower{
+            position: absolute;
+            z-index: 100;
+            left: -100px;
+            top: 10vh
+        }
+    }
+
+    &_img{
+        margin-top: 12vh;
+        height: 55vh;
+        width: 380px;
+        background-repeat: no-repeat!important;
+        background-size: contain!important;
+        position: relative;
+        z-index: 10;
+        box-shadow: 10px 10px 83px -19px rgba(0,0,0,0.3);
+    }
+
+    &_heading{
+        font-size: 28px;
+        color: white;
+        font-weight: normal;
+        .font-bodoni;
+        text-align: center;
+        padding: 0;
+        margin: 15px 0 10px 0;
+    }
+
+    &_meta{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &_category{
+        font-size: 10px;
+        .font-roboto-bold;
+        color: white;
+        opacity: 0.8;
+        text-transform: uppercase;
+    }
+
+    &_circle{
+        height: 3px;
+        width: 3px;
+        border-radius: 50%;
+        background: white;
+        opacity: 0.8;
+        margin: 0 10px;
+    }
+
+    &_date{
+        .font-roboto-reg;
+        font-size: 10px;
+        color: white;
+        opacity: 0.8;
+        text-transform: uppercase;
+    }
+}
+
+
+

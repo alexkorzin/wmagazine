@@ -1,0 +1,122 @@
+// ----------------Botton----------------
+.button{
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 3px;
+    vertical-align: middle;
+    max-height: 34px;
+    .font-futura;
+    color: white;
+    font-size: 11px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s ease;
+    transition-delay: 0.1s;
+
+    &:before{
+        content: "";
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 0px;
+        width: 0px;
+        border-radius: 50%;
+        position: absolute;
+        background: white;
+        z-index: -1;
+        transition: 0.8s ease;
+        transition-timing-function: cubic-bezier(0,-0.22,0,1);
+        transition: 0.8s ease;
+    }
+
+    &_img{
+        margin-right: 16px;
+        vertical-align: middle;
+        margin-top: -4px;
+        
+        &-content{
+            transition: 0.3s ease;
+            transition-delay: 0.1s;
+        }
+    }
+
+    &__colored{
+        border: none;
+        background: @transparent;
+    }
+
+    &:hover{
+        color: black;
+        .button_img-content{
+            stroke: black!important;
+        }
+    }
+
+    &:hover:before{
+        height: 150px;
+        width: 150px;
+        transition-delay: 0.1s;
+    }
+}
+
+// ----------------Cursor----------------
+.cursor-follow{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -30px 0 0 -30px;
+    pointer-events: none;
+    z-index: 1000;
+    background: white;
+    mix-blend-mode: difference;
+}
+
+*{
+    cursor: url(../img/cursor.png), auto;   
+}
+
+// ----------------Preloader----------------
+
+.preloader{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: black;
+    z-index: 999;
+
+    &_text{
+        font-size: 50px;
+        .font-roboto-reg;
+        font-weight: normal;
+        color: white;
+        text-align: center;
+        display: none;
+    }
+
+    &_logo{
+        display: block;
+        text-align: center;
+        line-height: 100vh;
+
+    }
+    span{
+        display: inline-block;
+    }
+}
+
+.overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: white;
+    z-index: 998;
+}
+
+
+
+
